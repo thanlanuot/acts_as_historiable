@@ -7,7 +7,7 @@ module ActsAsHistoriableHelper
     def track_owner; end
 
     def empty_owner
-      ::Historiable.owner = nil
+      ::ActsAsHistoriable.owner = nil
     end
   end
 end

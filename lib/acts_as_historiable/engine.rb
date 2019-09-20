@@ -9,12 +9,10 @@ module ActsAsHistoriable
       generators.factory_bot dir: 'spec/factories'
     end
 
-    ActiveSupport.on_load(:active_record) do
-      include ActsAsHistoriable
-    end
-
-    ActiveSupport.on_load(:action_controller_base) do
-      include ActsAsHistoriableHelper
+    config.to_prepare do
+      ActiveSupport.on_load(:action_controller_base) {
+        include ActsAsHistoriableHelper
+      }
     end
   end
 end
