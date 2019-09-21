@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.version     = ActsAsHistoriable::VERSION
   spec.authors     = ["Lien Pham"]
   spec.email       = ["ptbichlien@gmail.com"]
-  spec.homepage    = "https://github.com/thanlanuot/historiable"
+  spec.homepage    = "https://github.com/thanlanuot/acts_as_historiable"
   spec.summary     = "Historiable: a log plugin for model in Rails application"
   spec.description = "Help to audit historical activity on model in Rails application"
   spec.license     = "MIT"
@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
       "public gem pushes."
   end
 
-  spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  spec.files = Dir["{app,config,db,lib}/**/*", "{app,config,db,lib}/*", "{app,config,db,lib}/**/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   spec.add_dependency "rails", "~> 6.0.0"
 

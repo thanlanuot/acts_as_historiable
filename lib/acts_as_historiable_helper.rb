@@ -11,3 +11,7 @@ module ActsAsHistoriableHelper
     end
   end
 end
+
+ActiveSupport.on_load(:action_controller_base) {
+  include ActsAsHistoriableHelper
+}

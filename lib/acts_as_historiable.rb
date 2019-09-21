@@ -7,11 +7,15 @@ end
 module ActsAsHistoriable
   extend ActiveSupport::Concern
 
+  class_methods do
+    def acts_as_historiable
+      has_many :histories, as: :historiable, class_name: 'ActsAsHistoriable::History'
+
+      after_commit :save_log
+    end
+  end
+
   included do
-    has_many :histories, as: :historiable, class_name: 'ActsAsHistoriable::History'
-
-    after_commit :save_log
-
     def save_log
       log = saved_changes.deep_dup
       if log.length > 0
@@ -45,3 +49,6 @@ module ActsAsHistoriable
   end
 end
 
+ActiveSupport.on_load(:active_record) {
+  include ActsAsHistoriable
+}
